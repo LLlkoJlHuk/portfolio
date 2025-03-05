@@ -1,6 +1,26 @@
-- name: Setup SSH Key
-  run: |
-    mkdir -p "$HOME/.ssh"
-    echo "$DEPLOY_KEY" | tr -d '\r' > "$HOME/.ssh/deploy_key"
-    chmod 600 "$HOME/.ssh/deploy_key"
-    cd dist && rsync -e "ssh -p 22 -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no" --archive --compress --delete . lllkojlhuk_ssh@lllkojlhuk.beget.tech:/react-developer-portfolio/public_html
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p "$HOME/.ssh"
+          echo "$DEPLOY_KEY" | tr -d '\r' > "$HOME/.ssh/deploy_key"
+          chmod 600 "$HOME/.ssh/deploy_key"
+
+      - name: Build and Deploy
+        run: |
+          npm ci
+          npm run build
+          cd dist
+          rsync -e "ssh -p 22 -i $HOME/.ssh/deploy_key -o StrictHostKeyChecking=no" --archive --compress --delete . lllkojlhuk_ssh@lllkojlhuk.beget.tech:/react-developer-portfolio/public_html
