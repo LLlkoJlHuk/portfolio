@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # Setup key
+      - run: set -eu
+      - run: mkdir "$HOME/.ssh"
+      - run: echo "$" > "$HOME/.ssh/SSH_KEY_PRIVATE"
+      - run: chmod 600 "$HOME/.ssh/SSH_KEY_PRIVATE"
+      # Build
+      - run: npm ci
+      - run: npm run build
+      # Deploy
+      - run: cd dist && rsync -e "ssh -p 20022 -i $HOME/.ssh/SSH_KEY_PRIVATE -o StrictHostKeyChecking=no" --archive --compress --delete . lllkojlhuk_ssh@lllkojlhuk.beget.tech:/react-developer-portfolio/public_html
