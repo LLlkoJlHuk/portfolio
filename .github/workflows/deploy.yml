@@ -13,10 +13,12 @@ jobs:
       # Setup key
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
-      - run: echo "$" > "$HOME/.ssh/id_rsa"
+      - run: echo "$ID_RSA" > "$HOME/.ssh/id_rsa"
+        env:
+          ID_RSA: ${{ secrets.id_rsa }}
       - run: chmod 600 "$HOME/.ssh/id_rsa"
       # Build
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: cd dist && rsync -e "ssh -p 22 -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" --archive --compress --delete . lllkojlhuk_ssh@lllkojlhuk.beget.tech:/react-developer-portfolio/public_html
+      - run: cd dist && rsync -e "ssh -p 22 -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no -v" --archive --compress --delete . lllkojlhuk_ssh@lllkojlhuk.beget.tech:/react-developer-portfolio/public_html
