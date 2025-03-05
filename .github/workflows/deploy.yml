@@ -13,10 +13,10 @@ jobs:
       # Setup key
       - run: set -eu
       - run: mkdir "$HOME/.ssh"
-      - run: echo "$" > "$HOME/.ssh/SSH_KEY_PRIVATE"
-      - run: chmod 600 "$HOME/.ssh/SSH_KEY_PRIVATE"
+      - run: echo "$" > "$HOME/.ssh/id_ed25519"
+      - run: chmod 600 "$HOME/.ssh/id_ed25519"
       # Build
       - run: npm ci
       - run: npm run build
       # Deploy
-      - run: cd dist && rsync -e "ssh -p 22 -i $HOME/.ssh/SSH_KEY_PRIVATE -o StrictHostKeyChecking=no" --archive --compress --delete . lllkojlhuk_ssh@lllkojlhuk.beget.tech:/react-developer-portfolio/public_html
+      - run: cd dist && rsync -e "ssh -p 22 -i $HOME/.ssh/id_ed25519 -o StrictHostKeyChecking=no" --archive --compress --delete . lllkojlhuk_ssh@lllkojlhuk.beget.tech:/react-developer-portfolio/public_html
