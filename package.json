@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run copy-htaccess",
+    "copy-htaccess": "ncp .htaccess dist/.htaccess",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -32,6 +33,7 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "gh-pages": "^6.2.0",
     "globals": "^15.14.0",
+    "ncp": "^2.0.0",
     "vite": "^6.0.5",
     "vite-plugin-static-copy": "^2.3.0"
   }
