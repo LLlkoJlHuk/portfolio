@@ -1,0 +1,96 @@
+.contacts--block {
+  margin-top: 24px;
+
+  display: flex;
+  justify-content: left;
+
+  a {
+    user-select: none;
+    overflow: hidden;
+    text-decoration: none;
+
+    margin: 0 4px;
+    padding: 5px 20px;
+
+    height: 33px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+
+    border-radius: 5px;
+    transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) 0s;
+
+    img {
+      margin-right: 5px;
+
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      transform: translateY(2px);
+    }
+
+    &.linkedin {
+      color: #0A66C2;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 160%;
+
+      background: #fff;
+
+      img {
+        margin-right: 0;
+        margin-left: 2px;
+
+        width: 80px;
+        height: auto;
+      }
+
+      &:hover {
+        background: #E1E1E1;
+      }
+    }
+
+    &.telegram {
+      background: #41B4E6;
+
+      &:hover {
+        background: #389DC8;
+      }
+    }
+
+    &.whatsapp {
+      background: #34D939;
+
+      img {
+        margin-right: 2px;
+        width: 30px;
+        height: 30px;
+      }
+
+      &:hover {
+        background: #2DBB31;
+      }
+    }
+    &.gmail {
+      background: #fff;
+
+      img {
+        width: 70px;
+        height: auto;
+      }
+
+      &:hover {
+        background: #E1E1E1;
+      }
+    }
+  }
+}

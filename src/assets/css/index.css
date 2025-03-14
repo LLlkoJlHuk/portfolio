@@ -1,0 +1,237 @@
+body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+sup, sub {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+a {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #C7C7C7;
+  border: 2px solid #2A303C;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background: #04C2C9;
+  border-radius: 6px;
+  border: 1px solid #04C2C9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00A1A7;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 100;
+  src: url("@/assets/css/fonts/Roboto/thin.woff");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  src: url("@/assets/css/fonts/Roboto/light.woff");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  src: url("@/assets/css/fonts/Roboto/regular.woff");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  src: url("@/assets/css/fonts/Roboto/medium.woff");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  src: url("@/assets/css/fonts/Roboto/bold.woff");
+}
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  src: url("@/assets/css/fonts/Roboto/black.woff");
+}
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 300;
+  src: url("@/assets/css/fonts/Ubuntu/light.woff");
+}
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 400;
+  src: url("@/assets/css/fonts/Ubuntu/regular.woff");
+}
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  src: url("@/assets/css/fonts/Ubuntu/medium.woff");
+}
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 700;
+  src: url("@/assets/css/fonts/Ubuntu/bold.woff");
+}
+@font-face {
+  font-family: Gabriola;
+  font-style: normal;
+  font-weight: 400;
+  src: url("@/assets/css/fonts/Gabriola/regular.woff");
+}
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 99.9vh;
+  font-family: Ubuntu, sans-serif;
+  background: #252934;
+}
+
+#root {
+  height: 100%;
+  min-height: inherit;
+}
+
+.page {
+  padding: 140px 5% 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.page .page-content {
+  width: 100%;
+  max-width: 1200px;
+}
+.page .page-content .bg-header {
+  margin-top: 40px;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  text-transform: uppercase;
+  font-family: Gabriola;
+  font-size: 230px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  color: rgba(100, 100, 100, 0.1);
+}
+.page .page-content .page-header, .page .page-content .content-header {
+  margin-left: 24px;
+  margin-bottom: 48px;
+  color: #EDEDED;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+.page .page-content .content-header {
+  margin-top: 48px;
+  margin-bottom: 36px;
+  font-size: 28px;
+}
+
+.canvas {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 99.9vw;
+  max-height: 99.9vh;
+}
+
+.txt--blue {
+  color: #04C2C9;
+}
+
+.btn--custom {
+  text-decoration: none;
+  padding: 13px 70px;
+  position: relative;
+  color: #252934;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+  background: #04C2C9;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+}
+.btn--custom:hover {
+  background: #04B3B9;
+  padding: 13px 85px;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=index.css.map */

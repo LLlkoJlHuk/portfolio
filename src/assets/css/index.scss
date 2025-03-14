@@ -1,0 +1,118 @@
+@import "mixins";
+@import "reset";
+
+@include font(Roboto, (thin, light, regular, medium, bold, black), false, woff);
+@include font(Ubuntu, (light, regular, medium, bold), false, woff);
+@include font(Gabriola, (regular), false, woff);
+
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 99.9vh;
+
+  font-family: Ubuntu, sans-serif;
+
+  background: #252934;
+}
+
+#root {
+  height: 100%;
+  min-height: inherit;
+}
+
+.page {
+  padding: 140px 5% 0;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .page-content {
+    width: 100%;
+    max-width: 1200px;
+
+    .bg-header {
+      margin-top: 40px;
+
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 10%;
+
+      text-transform: uppercase;
+      font-family: Gabriola;
+      font-size: 230px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      color: rgba(100, 100, 100, .1);
+    }
+
+    .page-header, .content-header {
+      margin-left: 24px;
+      margin-bottom: 48px;
+
+      color: #EDEDED;
+      font-size: 34px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+    }
+
+    .content-header {
+      margin-top: 48px;
+      margin-bottom: 36px;
+
+      font-size: 28px;
+    }
+  }
+}
+
+.canvas {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  max-width: 99.9vw;
+  max-height: 99.9vh;
+}
+
+.txt {
+  &--blue {
+    color: #04C2C9;
+  }
+}
+
+.btn {
+  &--custom {
+    text-decoration: none;
+    padding: 13px 70px;
+
+    position: relative;
+
+    color: #252934;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    text-transform: uppercase;
+
+    background: #04C2C9;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+
+    &:hover {
+      background: #04B3B9;
+      padding: 13px 85px;
+      text-decoration: none;
+    }
+  }
+}
+

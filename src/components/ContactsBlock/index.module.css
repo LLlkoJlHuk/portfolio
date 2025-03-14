@@ -1,0 +1,76 @@
+.contacts--block {
+  margin-top: 24px;
+  display: flex;
+  justify-content: left;
+}
+.contacts--block a {
+  user-select: none;
+  overflow: hidden;
+  text-decoration: none;
+  margin: 0 4px;
+  padding: 5px 20px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  border-radius: 5px;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+}
+.contacts--block a img {
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}
+.contacts--block a:hover {
+  transform: translateY(2px);
+}
+.contacts--block a.linkedin {
+  color: #0A66C2;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 160%;
+  background: #fff;
+}
+.contacts--block a.linkedin img {
+  margin-right: 0;
+  margin-left: 2px;
+  width: 80px;
+  height: auto;
+}
+.contacts--block a.linkedin:hover {
+  background: #E1E1E1;
+}
+.contacts--block a.telegram {
+  background: #41B4E6;
+}
+.contacts--block a.telegram:hover {
+  background: #389DC8;
+}
+.contacts--block a.whatsapp {
+  background: #34D939;
+}
+.contacts--block a.whatsapp img {
+  margin-right: 2px;
+  width: 30px;
+  height: 30px;
+}
+.contacts--block a.whatsapp:hover {
+  background: #2DBB31;
+}
+.contacts--block a.gmail {
+  background: #fff;
+}
+.contacts--block a.gmail img {
+  width: 70px;
+  height: auto;
+}
+.contacts--block a.gmail:hover {
+  background: #E1E1E1;
+}
+
+/*# sourceMappingURL=index.module.css.map */

@@ -1,0 +1,32 @@
+.footer {
+  margin: 72px 0 24px;
+  width: 100%;
+}
+.footer h3 {
+  margin-bottom: 12px;
+  text-align: center;
+  color: rgba(237, 237, 237, 0.8);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+}
+.footer p {
+  margin: 10px;
+  text-align: center;
+  color: rgba(202, 202, 202, 0.7);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+}
+.footer a {
+  text-decoration: none;
+  color: #EDEDED;
+}
+.footer a:hover {
+  color: #D3D3D3;
+}
+
+/*# sourceMappingURL=index.module.css.map */

@@ -1,0 +1,155 @@
+.request-form {
+  margin-top: 96px;
+
+  width: 100%;
+  max-width: 500px;
+
+  .form {
+    &--loading {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      img {
+        width: 40px;
+        height: auto;
+      }
+
+      p {
+        margin-top: 12px;
+        width: 100%;
+
+        text-align: center;
+        color: #EDEDED;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%
+      }
+    }
+
+    &--input-block {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      img {
+        width: 30px;
+        height: auto;
+      }
+
+      input {
+        outline: none;
+
+        margin-left: 8px;
+        padding: 5px;
+        width: 100%;
+        max-width: 250px;
+
+        color: #989898;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+
+        border: none;
+        border-bottom: 2px solid #989898;
+        background: none;
+      }
+    }
+
+    &--error {
+      margin: 12px 40px 0;
+
+      color: #DD493E;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+    }
+
+    &--success {
+      width: 100%;
+      max-width: 750px;
+
+      p {
+        color: #CACACA;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 1px;
+      }
+    }
+
+    &--buttons {
+      margin: 24px 40px 0;
+
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      .btn {
+        &--back, &--next {
+          cursor: pointer;
+          user-select: none;
+
+          color: #000;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%;
+
+          border: none;
+          border-radius: 5px;
+          background: #04C2C9;
+
+          transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55) 0s;
+
+          &:hover {
+            text-decoration: none;
+            background: #03A5AB;
+
+            transform: translateY(2px);
+          }
+
+          &.disabled {
+            cursor: default;
+
+            background: #038C91;
+
+            &:hover {
+              transform: translateY(0);
+              background: #038C91;
+            }
+          }
+        }
+
+        &--back {
+          height: 33px;
+          width: 33px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 20px;
+            height: auto;
+          }
+        }
+
+        &--next {
+          margin-left: 5px;
+          padding: 8px 32px;
+        }
+      }
+    }
+
+    &--name {
+
+    }
+  }
+}
