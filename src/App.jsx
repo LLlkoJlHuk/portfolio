@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useRoutes, useLocation  } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRoutes } from "react-router-dom";
 import routes from "./routes/index.jsx";
 import SettingsContext from "./context/settings.js";
 import Canvas from "@/canvas/index.jsx";
 import Menu from "@/components/Menu/index.jsx";
 
-function AnimatedRoutes() {
-    const location = useLocation();
+
+function App() {
     const page = useRoutes(routes);
 
     const [settings, setSettings] = useState(() => {
@@ -23,17 +22,11 @@ function AnimatedRoutes() {
         });
     }
 
-    return (
-        <SettingsContext.Provider value={{settings, changeLanguage}}>
-            <Canvas />
-            <Menu />
-            { page ?? <div>Page not found</div> }
-        </SettingsContext.Provider>
-    );
+    return <SettingsContext.Provider value={{settings, changeLanguage}}>
+        <Canvas />
+        <Menu />
+        { page ?? <div>Page not found</div> }
+    </SettingsContext.Provider>
 }
 
-function App() {
-    return <AnimatedRoutes />;
-}
-
-export default App
+export default App;
