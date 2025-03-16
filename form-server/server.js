@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
-    origin: 'https://portfolio.lllkojlhuk.ru/',
+    origin: 'https://lllkojlhuk.ru/',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 };

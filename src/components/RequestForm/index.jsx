@@ -57,7 +57,7 @@ const RequestForm = () => {
         setErrors({});
 
         try {
-            const response = await fetch("https://portfolio.lllkojlhuk.ru/send", {
+            const response = await fetch("https://lllkojlhuk.ru/send", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
