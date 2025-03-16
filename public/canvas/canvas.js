@@ -1,6 +1,17 @@
 window.addEventListener('load', function () {
   let space;
 
+  // Функция для обновления высоты канваса
+  function updateCanvasHeight() {
+    const canvas = document.getElementById('canvas'); // Находим сам canvas
+    const parentElement = canvas.parentElement; // Получаем родительский элемент
+
+    if (canvas && parentElement) {
+      // Устанавливаем высоту канваса равной высоте родительского элемента
+      canvas.style.height = `${parentElement.offsetHeight}px`;
+    }
+  }
+
   function floatySpace() {
     let colors = [
       "#FF3F8E", "#04C2C9", "#2E55C1"
@@ -30,16 +41,11 @@ window.addEventListener('load', function () {
     space.add({
       animate: function (time, fps, context) {
         for (let i = 0; i < pts.length; i++) {
-          // rotate the points slowly
           let pt = pts[i];
-
           pt.rotate2D(Const.one_degree / 20, center);
           form.stroke(false).fill(colors[i % 3]).point(pt, 1);
 
-          // get line from pt to the mouse line
           let ln = new Line(pt).to(line.getPerpendicularFromPoint(pt));
-
-          // opacity of line derived from distance to the line
           let opacity = Math.min(0.8, 1 - Math.abs(line.getDistanceFromPoint(pt)) / r);
           let distFromMouse = Math.abs(ln.getDistanceFromPoint(mouse))
 
@@ -71,33 +77,31 @@ window.addEventListener('load', function () {
 
   floatySpace();
 
-  // Функция для обновления высоты канваса
-  function updateCanvasHeight() {
-    const canvas = document.getElementById('canvas'); // Находим сам canvas
-    const parentElement = canvas.parentElement; // Получаем родительский элемент
-
-    if (canvas && parentElement) {
-      canvas.style.height = `${parentElement.offsetHeight}px`; // Устанавливаем высоту канваса равной высоте родительского элемента
-    }
+  // Функция для обновления высоты канваса с задержкой
+  function updateCanvasHeightWithDelay() {
+    setTimeout(() => {
+      updateCanvasHeight(); // Обновляем высоту канваса с задержкой 0.5 секунд
+    }, 500); // Задержка 500 миллисекунд
   }
 
-  // Изначальная установка высоты канваса
-  updateCanvasHeight();
-
-  // Отслеживаем изменения размера окна и обновляем высоту канваса
-  window.addEventListener('resize', function () {
-    updateCanvasHeight();
-  });
-
-  // Отслеживаем изменения высоты родительского элемента с использованием MutationObserver
+  // Отслеживание изменений высоты канваса с использованием MutationObserver
   const observer = new MutationObserver(() => {
-    updateCanvasHeight();
+    updateCanvasHeightWithDelay(); // Обновляем высоту канваса с задержкой
   });
 
-  const parentElement = document.getElementById('canvas').parentElement; // Получаем родительский элемент
-  observer.observe(parentElement, {
-    attributes: true,
-    childList: true,
-    subtree: true
-  });
+  const canvas = document.getElementById('canvas'); // Находим сам canvas
+  const parentElement = canvas.parentElement; // Получаем родительский элемент
+
+  if (parentElement) {
+    observer.observe(parentElement, {
+      attributes: true,
+      childList: true,
+      subtree: true
+    });
+  }
+
+  // Изначальная установка высоты канваса при загрузке страницы с задержкой
+  setTimeout(() => {
+    updateCanvasHeight();
+  }, 500); // Задержка 500 миллисекунд
 });
