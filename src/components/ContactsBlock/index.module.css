@@ -3,6 +3,11 @@
   display: flex;
   justify-content: left;
 }
+@media (max-width: 768px) {
+  .contacts--block {
+    flex-wrap: wrap;
+  }
+}
 .contacts--block a {
   user-select: none;
   overflow: hidden;
@@ -20,6 +25,11 @@
   line-height: 120%;
   border-radius: 5px;
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
+}
+@media (max-width: 768px) {
+  .contacts--block a {
+    margin: 6px 4px;
+  }
 }
 .contacts--block a img {
   margin-right: 5px;

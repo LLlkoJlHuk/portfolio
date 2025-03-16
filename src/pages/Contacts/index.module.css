@@ -1,11 +1,11 @@
-.page--contacts {
+body .page--contacts {
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
   height: 100%;
   min-height: inherit;
 }
-.page--contacts .subhead, .page--contacts .contact-me {
+body .page--contacts .subhead, body .page--contacts .contact-me {
   width: 100%;
   max-width: 750px;
   color: #CACACA;
@@ -15,10 +15,10 @@
   line-height: 130%;
   letter-spacing: 1px;
 }
-.page--contacts .contact-me {
+body .page--contacts .contact-me {
   margin-top: 116px;
 }
-.page--contacts .footer {
+body .page--contacts .footer {
   margin-top: 120px;
 }
 

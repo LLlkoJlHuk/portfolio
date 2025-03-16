@@ -5,6 +5,11 @@
   align-items: center;
   text-decoration: none;
 }
+@media (max-width: 768px) {
+  .arrow-page-navigation {
+    display: none;
+  }
+}
 .arrow-page-navigation p {
   opacity: 0;
   text-transform: uppercase;
@@ -22,7 +27,7 @@
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s;
 }
 .arrow-page-navigation.arr-left {
-  left: 4%;
+  left: 3%;
   flex-direction: row-reverse;
 }
 .arrow-page-navigation.arr-left p {
@@ -39,7 +44,7 @@
   transform: translate(5px, 0) rotate(180deg);
 }
 .arrow-page-navigation.arr-right {
-  right: 4%;
+  right: 3%;
   flex-direction: row;
 }
 .arrow-page-navigation.arr-right p {

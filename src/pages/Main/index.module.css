@@ -1,4 +1,4 @@
-.page--main {
+body .page--main {
   width: 100%;
   height: 100%;
   min-height: inherit;
@@ -8,14 +8,39 @@
   align-content: center;
   background: rgba(31, 35, 44, 0.4);
 }
-.page--main .main-content h1 {
+@media (max-width: 768px) {
+  body .page--main {
+    padding: 0 5%;
+  }
+}
+@media (max-width: 768px) {
+  body .page--main .main-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+body .page--main .main-content h1 {
   color: #CACACA;
   font-size: 50px;
   font-style: normal;
   font-weight: 400;
   line-height: 70px;
 }
-.page--main .main-content .btn--custom {
+@media (max-width: 768px) {
+  body .page--main .main-content h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    line-height: 120%;
+  }
+}
+@media (max-width: 480px) {
+  body .page--main .main-content h1 {
+    font-size: 28px;
+  }
+}
+body .page--main .main-content .btn--custom {
   margin-top: 24px;
   display: inline-block;
 }

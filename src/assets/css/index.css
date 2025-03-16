@@ -151,6 +151,11 @@ body {
   font-family: Ubuntu, sans-serif;
   background: #252934;
 }
+@media (max-width: 768px) {
+  body {
+    min-height: 99.8vh;
+  }
+}
 
 #root {
   height: 100%;
@@ -167,6 +172,11 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .page {
+    padding-top: 70px;
+  }
 }
 .page .page-content {
   width: 100%;
@@ -186,6 +196,26 @@ body {
   line-height: 120%;
   color: rgba(100, 100, 100, 0.1);
 }
+@media (max-width: 1200px) {
+  .page .page-content .bg-header {
+    top: 20px;
+    font-size: 140px;
+  }
+}
+@media (max-width: 768px) {
+  .page .page-content .bg-header {
+    top: -10px;
+    left: 10px;
+    font-size: 100px;
+  }
+}
+@media (max-width: 370px) {
+  .page .page-content .bg-header {
+    top: -10px;
+    left: 10px;
+    font-size: 80px;
+  }
+}
 .page .page-content .page-header, .page .page-content .content-header {
   margin-left: 24px;
   margin-bottom: 48px;
@@ -194,6 +224,12 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
+}
+@media (max-width: 480px) {
+  .page .page-content .page-header, .page .page-content .content-header {
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
 }
 .page .page-content .content-header {
   margin-top: 48px;
@@ -209,6 +245,11 @@ body {
   width: 100%;
   height: 100%;
   min-height: 99.9vh;
+}
+@media (max-width: 768px) {
+  .canvas {
+    min-height: 99.8vh;
+  }
 }
 
 .txt--blue {
@@ -235,6 +276,12 @@ body {
   background: #04B3B9;
   padding: 13px 85px;
   text-decoration: none;
+}
+
+@media (max-width: 1440px) {
+  br.br--desktop {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

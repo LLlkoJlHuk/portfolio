@@ -37,6 +37,12 @@ $weights_map: (
   black: 900
 );
 
+@mixin bigLaptop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin laptop {
   @media (max-width: 1200px) {
     @content;

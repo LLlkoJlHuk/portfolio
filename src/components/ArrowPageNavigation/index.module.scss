@@ -1,3 +1,5 @@
+@import "../../assets/css/mixins.scss";
+
 .arrow-page-navigation {
   position: fixed;
   top: 50%;
@@ -5,6 +7,10 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+
+  @include tablet {
+    display: none;
+  }
 
   p {
     opacity: 0;
@@ -27,7 +33,7 @@
   }
 
   &.arr-left {
-    left: 4%;
+    left: 3%;
     flex-direction: row-reverse;
 
     p {
@@ -52,7 +58,7 @@
   }
 
   &.arr-right {
-    right: 4%;
+    right: 3%;
     flex-direction: row;
 
     p {

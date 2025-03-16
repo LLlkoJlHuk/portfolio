@@ -1,3 +1,5 @@
+@import "../../assets/css/mixins.scss";
+
 @keyframes showLeftProject {
   from {
     left: -40%;
@@ -9,7 +11,7 @@
   }
 }
 
-.page--projects {
+body .page--projects {
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -37,6 +39,14 @@
       box-shadow: 10px 5px 20px rgba(0, 0, 0, .2);
       transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) 0s;
       text-decoration: none;
+
+      @include bigLaptop {
+        max-width: 450px;
+      }
+
+      @include tablet {
+        max-width: 400px;
+      }
 
       &--preview {
         position: relative;

@@ -1,15 +1,26 @@
-.page--skills {
-  background: rgba(31,35,44, .4);
+@import "../../assets/css/mixins.scss";
 
-  @keyframes showSkill {
-    0% {
-      max-width: 0;
-      opacity: 0;
-    }
-    100% {
-      max-width: 100%;
-      opacity: 1;
-    }
+@keyframes showSkill {
+  0% {
+    max-width: 0;
+    opacity: 0;
+  }
+  100% {
+    max-width: 100%;
+    opacity: 1;
+  }
+}
+
+body .page--skills {
+  background: rgba(31,35,44, .4);
+  padding: 140px 120px 0;
+
+  @include laptop {
+    padding: 140px 90px 0;
+  }
+
+  @include tablet {
+    padding: 70px 5% 0;
   }
 
   .about-me {
@@ -19,13 +30,28 @@
     justify-content: space-between;
     align-items: center;
 
+    @include bigTablet {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
     >:last-child {
       margin-left: 24px;
+
+      @include bigTablet {
+        margin-top: 24px;
+        margin-left: 0;
+      }
     }
 
     .photo {
       width: 250px;
       height: 250px;
+
+      @include bigPhone {
+        width: 200px;
+        height: 200px;
+      }
     }
 
     .description {
@@ -38,6 +64,9 @@
         font-weight: 400;
         line-height: 120%;
 
+        @include bigTablet {
+          text-align: left;
+        }
       }
 
       p {
@@ -48,6 +77,10 @@
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
+
+        @include bigTablet {
+          text-align: left;
+        }
 
         &:last-child {
           margin-bottom: 0;
@@ -143,6 +176,10 @@
         justify-content: center;
         align-items: center;
 
+        @include bigPhone {
+          flex-wrap: wrap;
+        }
+
         >div {
           margin: 0 3%;
           text-align: center;
@@ -151,6 +188,12 @@
           font-style: normal;
           font-weight: 400;
           line-height: 120%;
+
+          @include bigPhone {
+            margin: 6px 0;
+            width: 100%;
+            text-align: left;
+          }
         }
       }
     }
@@ -165,6 +208,10 @@
       display: flex;
       justify-content: start;
       align-items: start;
+
+      @include bigPhone {
+        flex-wrap: wrap;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -202,6 +249,11 @@
         &--desc {
           margin-left: 24px;
           width: 100%;
+
+          @include bigPhone {
+            margin-top: 24px;
+            margin-left: 0;
+          }
         }
 
         &--name {
@@ -259,8 +311,16 @@
       justify-content: start;
       align-items: center;
 
+      @include bigPhone {
+        flex-wrap: wrap;
+      }
+
       &:last-child {
         margin-bottom: 0;
+
+        @include bigPhone {
+          margin-bottom: 24px;
+        }
 
         &::before {
           content: none;
@@ -294,6 +354,11 @@
         &--desc {
           margin-left: 24px;
           width: 100%;
+
+          @include bigPhone {
+            margin-top: 24px;
+            margin-left: 0;
+          }
         }
 
         &--name {

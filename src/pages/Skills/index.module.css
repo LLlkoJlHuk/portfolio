@@ -1,6 +1,3 @@
-.page--skills {
-  background: rgba(31, 35, 44, 0.4);
-}
 @keyframes showSkill {
   0% {
     max-width: 0;
@@ -11,20 +8,52 @@
     opacity: 1;
   }
 }
-.page--skills .about-me {
+body .page--skills {
+  background: rgba(31, 35, 44, 0.4);
+  padding: 140px 120px 0;
+}
+@media (max-width: 1200px) {
+  body .page--skills {
+    padding: 140px 90px 0;
+  }
+}
+@media (max-width: 768px) {
+  body .page--skills {
+    padding: 70px 5% 0;
+  }
+}
+body .page--skills .about-me {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.page--skills .about-me > :last-child {
+@media (max-width: 1024px) {
+  body .page--skills .about-me {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+body .page--skills .about-me > :last-child {
   margin-left: 24px;
 }
-.page--skills .about-me .photo {
+@media (max-width: 1024px) {
+  body .page--skills .about-me > :last-child {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+}
+body .page--skills .about-me .photo {
   width: 250px;
   height: 250px;
 }
-.page--skills .about-me .description .subhead {
+@media (max-width: 480px) {
+  body .page--skills .about-me .photo {
+    width: 200px;
+    height: 200px;
+  }
+}
+body .page--skills .about-me .description .subhead {
   margin-bottom: 16px;
   text-align: right;
   color: #CACACA;
@@ -33,7 +62,12 @@
   font-weight: 400;
   line-height: 120%;
 }
-.page--skills .about-me .description p {
+@media (max-width: 1024px) {
+  body .page--skills .about-me .description .subhead {
+    text-align: left;
+  }
+}
+body .page--skills .about-me .description p {
   margin-bottom: 16px;
   text-align: right;
   color: #CACACA;
@@ -42,14 +76,19 @@
   font-weight: 400;
   line-height: 140%;
 }
-.page--skills .about-me .description p:last-child {
+@media (max-width: 1024px) {
+  body .page--skills .about-me .description p {
+    text-align: left;
+  }
+}
+body .page--skills .about-me .description p:last-child {
   margin-bottom: 0;
 }
-.page--skills .skills-set {
+body .page--skills .skills-set {
   margin-top: 48px;
   width: 100%;
 }
-.page--skills .skills-set .skill {
+body .page--skills .skills-set .skill {
   overflow: hidden;
   position: relative;
   margin: 12px 0;
@@ -61,7 +100,7 @@
   background: #2A303C;
   border-radius: 6px;
 }
-.page--skills .skills-set .skill--progress {
+body .page--skills .skills-set .skill--progress {
   position: absolute;
   height: 100%;
   background: #00A1A7;
@@ -70,7 +109,7 @@
   animation-fill-mode: forwards;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.page--skills .skills-set .skill--head {
+body .page--skills .skills-set .skill--head {
   z-index: 1;
   position: relative;
   width: 100px;
@@ -81,7 +120,7 @@
   background: #04C2C9;
   border-radius: 6px;
 }
-.page--skills .skills-set .skill--head p {
+body .page--skills .skills-set .skill--head p {
   text-align: center;
   color: #343434;
   font-size: 14px;
@@ -89,7 +128,7 @@
   font-weight: 400;
   line-height: 140%;
 }
-.page--skills .skills-set .skill--percent {
+body .page--skills .skills-set .skill--percent {
   z-index: 1;
   position: relative;
   width: 50px;
@@ -98,7 +137,7 @@
   justify-content: center;
   align-items: center;
 }
-.page--skills .skills-set .skill--percent p {
+body .page--skills .skills-set .skill--percent p {
   text-align: center;
   color: #CACACA;
   font-size: 15px;
@@ -106,14 +145,19 @@
   font-weight: 400;
   line-height: 140%;
 }
-.page--skills .skills-set .skill--desc {
+body .page--skills .skills-set .skill--desc {
   margin-top: 24px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.page--skills .skills-set .skill--desc > div {
+@media (max-width: 480px) {
+  body .page--skills .skills-set .skill--desc {
+    flex-wrap: wrap;
+  }
+}
+body .page--skills .skills-set .skill--desc > div {
   margin: 0 3%;
   text-align: center;
   color: #CACACA;
@@ -122,7 +166,14 @@
   font-weight: 400;
   line-height: 120%;
 }
-.page--skills .experience--item {
+@media (max-width: 480px) {
+  body .page--skills .skills-set .skill--desc > div {
+    margin: 6px 0;
+    width: 100%;
+    text-align: left;
+  }
+}
+body .page--skills .experience--item {
   margin-bottom: 72px;
   position: relative;
   width: 100%;
@@ -130,13 +181,18 @@
   justify-content: start;
   align-items: start;
 }
-.page--skills .experience--item:last-child {
+@media (max-width: 480px) {
+  body .page--skills .experience--item {
+    flex-wrap: wrap;
+  }
+}
+body .page--skills .experience--item:last-child {
   margin-bottom: 0;
 }
-.page--skills .experience--item:last-child::before {
+body .page--skills .experience--item:last-child::before {
   content: none;
 }
-.page--skills .experience--item::before {
+body .page--skills .experience--item::before {
   content: "";
   position: absolute;
   left: 5%;
@@ -146,19 +202,25 @@
   background: #CACACA;
   opacity: 0.2;
 }
-.page--skills .experience--item .experience--item--logo {
+body .page--skills .experience--item .experience--item--logo {
   width: 80px;
   border-radius: 100%;
 }
-.page--skills .experience--item .experience--item--logo img {
+body .page--skills .experience--item .experience--item--logo img {
   width: 100%;
   height: auto;
 }
-.page--skills .experience--item .experience--item--desc {
+body .page--skills .experience--item .experience--item--desc {
   margin-left: 24px;
   width: 100%;
 }
-.page--skills .experience--item .experience--item--name {
+@media (max-width: 480px) {
+  body .page--skills .experience--item .experience--item--desc {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+}
+body .page--skills .experience--item .experience--item--name {
   margin-bottom: 6px;
   color: #CACACA;
   font-size: 20px;
@@ -166,7 +228,7 @@
   font-weight: 700;
   line-height: 120%;
 }
-.page--skills .experience--item .experience--item--post {
+body .page--skills .experience--item .experience--item--post {
   margin-bottom: 3px;
   color: #CACACA;
   font-size: 18px;
@@ -174,7 +236,7 @@
   font-weight: 400;
   line-height: 140%;
 }
-.page--skills .experience--item .experience--item--dates {
+body .page--skills .experience--item .experience--item--dates {
   margin-bottom: 12px;
   color: #CACACA;
   font-size: 14px;
@@ -183,7 +245,7 @@
   line-height: 100%;
   opacity: 0.6;
 }
-.page--skills .experience--item .experience--item--job-description {
+body .page--skills .experience--item .experience--item--job-description {
   margin-bottom: 6px;
   color: #CACACA;
   font-size: 16px;
@@ -191,7 +253,7 @@
   font-weight: 400;
   line-height: 150%;
 }
-.page--skills .education--item {
+body .page--skills .education--item {
   margin-bottom: 72px;
   position: relative;
   width: 100%;
@@ -199,13 +261,23 @@
   justify-content: start;
   align-items: center;
 }
-.page--skills .education--item:last-child {
+@media (max-width: 480px) {
+  body .page--skills .education--item {
+    flex-wrap: wrap;
+  }
+}
+body .page--skills .education--item:last-child {
   margin-bottom: 0;
 }
-.page--skills .education--item:last-child::before {
+@media (max-width: 480px) {
+  body .page--skills .education--item:last-child {
+    margin-bottom: 24px;
+  }
+}
+body .page--skills .education--item:last-child::before {
   content: none;
 }
-.page--skills .education--item::before {
+body .page--skills .education--item::before {
   content: "";
   position: absolute;
   left: 5%;
@@ -215,19 +287,25 @@
   background: #CACACA;
   opacity: 0.2;
 }
-.page--skills .education--item .education--item--logo {
+body .page--skills .education--item .education--item--logo {
   width: 80px;
   border-radius: 100%;
 }
-.page--skills .education--item .education--item--logo img {
+body .page--skills .education--item .education--item--logo img {
   width: 100%;
   height: auto;
 }
-.page--skills .education--item .education--item--desc {
+body .page--skills .education--item .education--item--desc {
   margin-left: 24px;
   width: 100%;
 }
-.page--skills .education--item .education--item--name {
+@media (max-width: 480px) {
+  body .page--skills .education--item .education--item--desc {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+}
+body .page--skills .education--item .education--item--name {
   margin-bottom: 6px;
   color: #CACACA;
   font-size: 20px;
@@ -235,7 +313,7 @@
   font-weight: 700;
   line-height: 120%;
 }
-.page--skills .education--item .education--item--direction {
+body .page--skills .education--item .education--item--direction {
   margin-bottom: 6px;
   color: #CACACA;
   font-size: 18px;
@@ -243,7 +321,7 @@
   font-weight: 400;
   line-height: 120%;
 }
-.page--skills .education--item .education--item--dates {
+body .page--skills .education--item .education--item--dates {
   color: #CACACA;
   font-size: 16px;
   font-style: normal;

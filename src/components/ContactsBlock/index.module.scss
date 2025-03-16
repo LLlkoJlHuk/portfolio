@@ -1,8 +1,14 @@
+@import "../../assets/css/mixins.scss";
+
 .contacts--block {
   margin-top: 24px;
 
   display: flex;
   justify-content: left;
+
+  @include tablet {
+    flex-wrap: wrap;
+  }
 
   a {
     user-select: none;
@@ -26,6 +32,10 @@
 
     border-radius: 5px;
     transition: all 0.5s cubic-bezier(0.68,-0.55,0.265,1.55) 0s;
+
+    @include tablet {
+      margin: 6px 4px;
+    }
 
     img {
       margin-right: 5px;

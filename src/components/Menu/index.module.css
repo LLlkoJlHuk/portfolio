@@ -44,6 +44,11 @@
   background: #1C1F28;
   transition: all 0.5s ease-in-out;
 }
+@media (max-width: 768px) {
+  .menu .menu-wrapper {
+    padding: 0 5%;
+  }
+}
 .menu .menu-wrapper .menu-items {
   display: flex;
   justify-content: center;
@@ -62,6 +67,12 @@
   opacity: 0.9;
   background: #252934;
   border: 1px solid #1C1F28;
+}
+@media (max-width: 768px) {
+  .menu .menu-wrapper .menu-items .menu--item {
+    padding: 24px;
+    font-size: 20px;
+  }
 }
 .menu .menu-wrapper .menu-items .menu--item:first-child {
   border-top-left-radius: 12px;
@@ -87,6 +98,12 @@
 }
 .menu .menu-wrapper .change-language > * {
   margin: 0 10px;
+}
+@media (max-width: 768px) {
+  .menu .menu-wrapper .change-language {
+    right: auto;
+    font-size: 20px;
+  }
 }
 .menu .menu-wrapper.visible {
   display: flex;
