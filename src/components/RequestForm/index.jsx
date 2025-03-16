@@ -69,14 +69,14 @@ const RequestForm = () => {
 
             const result = await response.text();
             if (result.includes("Application accepted")) {
-                setSuccessMessage("Заявка успешно отправлена!");
+                setSuccessMessage(dictionary.pageContactsFormSuccess[settings.lang]);
                 setFormData({ name: "", email: "", message: "" });
                 setIsSubmitted(true);
             } else {
-                setErrors({ server: "Ошибка отправки, попробуйте еще раз." });
+                setErrors({ server: dictionary.pageContactsFormErrorSend[settings.lang] });
             }
         } catch (error) {
-            setErrors({ server: "Ошибка сервера. Попробуйте позже." });
+            setErrors({ server: dictionary.pageContactsFormErrorServer[settings.lang]});
         } finally {
             setLoading(false);
         }
