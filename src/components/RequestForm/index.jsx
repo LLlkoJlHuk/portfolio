@@ -56,33 +56,32 @@ const RequestForm = () => {
         setLoading(true);
         setErrors({});
 
+        const formDataToSend = new FormData();
+        formDataToSend.append('name', formData.name);
+        formDataToSend.append('email', formData.email);
+        formDataToSend.append('message', formData.message);
+
         try {
-            const response = await fetch("https://lllkojlhuk.ru/send", {
+            const response = await fetch("/form/form.php", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
+                body: formDataToSend,
             });
 
-            const result = await response.json();
-            if (result.success) {
-                setSuccessMessage(dictionary.pageContactsFormSuccess[settings.lang]);
+            const result = await response.text();
+            if (result.includes("Application accepted")) {
+                setSuccessMessage("Заявка успешно отправлена!");
                 setFormData({ name: "", email: "", message: "" });
                 setIsSubmitted(true);
             } else {
-                if (result.error === "Name") {
-                    setErrors({ server: dictionary.pageContactsFormInputNameError[settings.lang] });
-                } else if (result.error === "Email") {
-                    setErrors({ server: dictionary.pageContactsFormInputEmailError[settings.lang] });
-                } else {
-                    setErrors({ server: dictionary.pageContactsFormErrorSend[settings.lang] });
-                }
+                setErrors({ server: "Ошибка отправки, попробуйте еще раз." });
             }
         } catch (error) {
-            setErrors({ server: dictionary.pageContactsFormErrorServer[settings.lang] });
+            setErrors({ server: "Ошибка сервера. Попробуйте позже." });
         } finally {
             setLoading(false);
         }
     };
+
 
     return (
         <form onSubmit={handleSubmit} className={styles["request-form"]}>
