@@ -6,7 +6,6 @@ window.addEventListener('load', function () {
       "#FF3F8E", "#04C2C9", "#2E55C1"
     ];
 
-
     space = new CanvasSpace("canvas", "#252934").display();
     let form = new Form(space);
 
@@ -30,7 +29,6 @@ window.addEventListener('load', function () {
     // Canvas
     space.add({
       animate: function (time, fps, context) {
-
         for (let i = 0; i < pts.length; i++) {
           // rotate the points slowly
           let pt = pts[i];
@@ -72,4 +70,34 @@ window.addEventListener('load', function () {
   }
 
   floatySpace();
+
+  // Функция для обновления высоты канваса
+  function updateCanvasHeight() {
+    const canvas = document.getElementById('canvas'); // Находим сам canvas
+    const parentElement = canvas.parentElement; // Получаем родительский элемент
+
+    if (canvas && parentElement) {
+      canvas.style.height = `${parentElement.offsetHeight}px`; // Устанавливаем высоту канваса равной высоте родительского элемента
+    }
+  }
+
+  // Изначальная установка высоты канваса
+  updateCanvasHeight();
+
+  // Отслеживаем изменения размера окна и обновляем высоту канваса
+  window.addEventListener('resize', function () {
+    updateCanvasHeight();
+  });
+
+  // Отслеживаем изменения высоты родительского элемента с использованием MutationObserver
+  const observer = new MutationObserver(() => {
+    updateCanvasHeight();
+  });
+
+  const parentElement = document.getElementById('canvas').parentElement; // Получаем родительский элемент
+  observer.observe(parentElement, {
+    attributes: true,
+    childList: true,
+    subtree: true
+  });
 });

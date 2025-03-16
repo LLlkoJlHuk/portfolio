@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import routes from "./routes/index.jsx";
 import SettingsContext from "./context/settings.js";
 import Menu from "@/components/Menu/index.jsx";
-import CanvasComponent from "@/components/Canvas/index.jsx";
 
 function AnimatedRoutes() {
     const location = useLocation();
@@ -33,7 +32,6 @@ function AnimatedRoutes() {
                     exit={{ x: "-100%", opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
-                    <CanvasComponent />
                     <Menu />
                     { page ?? <div>Page not found</div> }
                 </motion.div>
