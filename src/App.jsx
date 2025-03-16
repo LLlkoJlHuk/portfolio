@@ -24,6 +24,15 @@ function AnimatedRoutes() {
         });
     }
 
+    function logMessage(msg) {
+        const log = document.createElement("div");
+        log.textContent = msg;
+        document.body.appendChild(log);
+    }
+    console.log = logMessage;
+    console.error = logMessage;
+
+
     return (
         <SettingsContext.Provider value={{settings, changeLanguage}}>
             <AnimatePresence mode="wait">
