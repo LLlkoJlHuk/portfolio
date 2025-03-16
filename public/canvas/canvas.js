@@ -71,5 +71,10 @@ window.addEventListener('load', function () {
     space.play();
   }
 
-  floatySpace();
+  // Проверяем, загружены ли все ресурсы, прежде чем инициализировать canvas
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', floatySpace); // Если DOM еще загружается
+  } else {
+    floatySpace(); // Если DOM уже загружен
+  }
 });
