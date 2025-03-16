@@ -77,31 +77,7 @@ window.addEventListener('load', function () {
 
   floatySpace();
 
-  // Функция для обновления высоты канваса с задержкой
-  function updateCanvasHeightWithDelay() {
-    setTimeout(() => {
-      updateCanvasHeight(); // Обновляем высоту канваса с задержкой 0.5 секунд
-    }, 500); // Задержка 500 миллисекунд
-  }
-
-  // Отслеживание изменений высоты канваса с использованием MutationObserver
-  const observer = new MutationObserver(() => {
-    updateCanvasHeightWithDelay(); // Обновляем высоту канваса с задержкой
-  });
-
-  const canvas = document.getElementById('canvas'); // Находим сам canvas
-  const parentElement = canvas.parentElement; // Получаем родительский элемент
-
-  if (parentElement) {
-    observer.observe(parentElement, {
-      attributes: true,
-      childList: true,
-      subtree: true
-    });
-  }
-
-  // Изначальная установка высоты канваса при загрузке страницы с задержкой
   setTimeout(() => {
     updateCanvasHeight();
-  }, 500); // Задержка 500 миллисекунд
+  }, 100)
 });

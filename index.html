@@ -14,18 +14,14 @@
     <script src="/canvas/pt.min.js"></script>
     <script src="/canvas/canvas.js"></script>
     <script>
-      // Функция для обновления высоты .canvas
       function updateCanvasHeight() {
-        const bodyHeight = document.body.offsetHeight; // Получаем высоту body
-        const canvas = document.querySelector('.canvas'); // Находим элемент с классом .canvas
+        const bodyHeight = document.body.offsetHeight;
+        const canvas = document.querySelector('.canvas');
 
         if (canvas) {
-          // Устанавливаем высоту .canvas равной высоте body только один раз
           canvas.style.height = `${bodyHeight}px`;
         }
       }
-
-      // Обновление высоты после загрузки страницы
       window.addEventListener('load', updateCanvasHeight);
     </script>
 
