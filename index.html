@@ -19,23 +19,15 @@
         const bodyHeight = document.body.offsetHeight; // Получаем высоту body
         const canvas = document.querySelector('.canvas'); // Находим элемент с классом .canvas
 
-        if (canvas && canvas.offsetHeight !== bodyHeight) {
-          // Обновляем высоту только если она отличается от текущей
+        if (canvas) {
+          // Устанавливаем высоту .canvas равной высоте body только один раз
           canvas.style.height = `${bodyHeight}px`;
         }
       }
 
-      // Функция, вызывающая обновление высоты
-      function updateHeightAfterRender() {
-        updateCanvasHeight(); // Просто обновляем высоту канваса
-      }
-
-      // Инициализация: запускаем обновление при загрузке страницы
-      window.addEventListener('load', updateHeightAfterRender);
-
-      // Отслеживаем изменения размера окна
-      window.addEventListener('resize', updateHeightAfterRender);
-
+      // Обновление высоты после загрузки страницы
+      window.addEventListener('load', updateCanvasHeight);
     </script>
+
   </body>
 </html>
