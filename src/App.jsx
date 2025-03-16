@@ -3,8 +3,6 @@ import { useRoutes, useLocation  } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import routes from "./routes/index.jsx";
 import SettingsContext from "./context/settings.js";
-import Canvas from "@/canvas/index.jsx";
-import CanvasLoader from "@/components/CanvasLoader/index.jsx";
 import Menu from "@/components/Menu/index.jsx";
 
 function AnimatedRoutes() {
@@ -34,8 +32,6 @@ function AnimatedRoutes() {
                     exit={{ x: "-100%", opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
-                    <Canvas />
-                    <CanvasLoader />
                     <Menu />
                     { page ?? <div>Page not found</div> }
                 </motion.div>

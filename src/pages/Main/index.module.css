@@ -6,7 +6,6 @@ body .page--main {
   justify-content: center;
   align-items: center;
   align-content: center;
-  background: rgba(31, 35, 44, 0.4);
 }
 @media (max-width: 768px) {
   body .page--main {
