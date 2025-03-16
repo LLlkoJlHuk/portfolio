@@ -72,6 +72,14 @@ body .page--projects {
         font-style: normal;
         font-weight: 500;
         line-height: 120%;
+
+        @include tablet {
+          font-size: 24px;
+        }
+
+        @include bigPhone {
+          font-size: 18px;
+        }
       }
 
       &--desc {
@@ -80,6 +88,10 @@ body .page--projects {
         font-style: normal;
         font-weight: 400;
         line-height: 120%;
+
+        @include bigPhone {
+          font-size: 14px;
+        }
       }
 
       &:hover {

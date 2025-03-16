@@ -24,6 +24,8 @@ export function useMenu() {
     function openMenu() {
         if (!menu.current) return;
 
+        document.body.style.overflow = "hidden";
+
         menu.current.classList.add(styles["visible"]);
         let animation = menu.current.animate(
             [
@@ -51,6 +53,7 @@ export function useMenu() {
 
         animCloseDiv.addEventListener("finish", () => {
             menu.current.classList.remove(styles["visible"]);
+            document.body.style.overflow = "";
             isAnimating.current = false;
         });
     }
