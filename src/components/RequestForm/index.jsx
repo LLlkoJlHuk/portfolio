@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import dictionary from "@/constants/dictionary.jsx";
 import SettingsContext from "@/context/settings.js";
 import Human from "../../assets/images/human.svg";
@@ -16,7 +17,7 @@ const RequestForm = () => {
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-
+    const [captchaValue, setCaptchaValue] = useState(null);
 
     const validateStep = () => {
         let newErrors = {};
@@ -33,10 +34,18 @@ const RequestForm = () => {
             }
         }
 
+        // Добавляем проверку на капчу
+        if (step === 3 && !captchaValue) {
+            newErrors.captcha = dictionary.pageContactsFormCaptchaError[settings.lang];
+        }
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
+    const handleCaptchaChange = (value) => {
+        setCaptchaValue(value);  // Сохраняем значение капчи
+    };
 
     const handleNext = () => {
         if (validateStep()) {
@@ -60,6 +69,7 @@ const RequestForm = () => {
         formDataToSend.append('name', formData.name);
         formDataToSend.append('email', formData.email);
         formDataToSend.append('message', formData.message);
+        formDataToSend.append('captcha', captchaValue);
 
         try {
             const response = await fetch("/form/form.php", {
@@ -76,12 +86,11 @@ const RequestForm = () => {
                 setErrors({ server: dictionary.pageContactsFormErrorSend[settings.lang] });
             }
         } catch (error) {
-            setErrors({ server: dictionary.pageContactsFormErrorServer[settings.lang]});
+            setErrors({ server: dictionary.pageContactsFormErrorServer[settings.lang] });
         } finally {
             setLoading(false);
         }
     };
-
 
     return (
         <form onSubmit={handleSubmit} className={styles["request-form"]}>
@@ -121,7 +130,6 @@ const RequestForm = () => {
                             </div>
                         </div>
                     )}
-
 
                     {step === 2 && (
                         <div className={styles["form--block"]}>
@@ -180,6 +188,17 @@ const RequestForm = () => {
                                 <p className={styles["form--error"]}>
                                     {errors.server && errors.server}
                                 </p>
+
+                                {/* Добавляем компонент капчи */}
+                                <div className={styles["form--captcha"]}>
+                                    <ReCAPTCHA
+                                        sitekey="6LeWXPYqAAAAAIN-pavipiqi3EeXmGf2mI5JZivH"
+                                        onChange={handleCaptchaChange}
+                                    />
+                                    <p className={styles["form--error"]}>
+                                        {errors.captcha && errors.captcha}
+                                    </p>
+                                </div>
 
                                 <div className={styles["form--buttons"]}>
                                     <div className={styles["btn--back"]} onClick={handleBack}>
