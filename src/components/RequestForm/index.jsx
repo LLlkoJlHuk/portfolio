@@ -146,6 +146,12 @@ const RequestForm = () => {
                     )}
 
                     {step === 3 && (
+                        loading ? (
+                            <div className={styles["form--loading"]}>
+                                <img src={Loader} alt="loading" />
+                                <p>{dictionary.pageContactsFormLoading[settings.lang]}</p>
+                            </div>
+                        ) : (
                         <div className={styles["form--block"]}>
                             <div className={styles["form--input-block"]}>
                                 <img src={Message} alt="message" />
@@ -166,6 +172,7 @@ const RequestForm = () => {
                                 </button>
                             </div>
                         </div>
+                        )
                     )}
                 </>
             )}
