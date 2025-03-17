@@ -44,7 +44,7 @@ const RequestForm = () => {
     };
 
     const handleCaptchaChange = (value) => {
-        setCaptchaValue(value);  // Сохраняем значение капчи
+        setCaptchaValue(value);
     };
 
     const handleNext = () => {
@@ -189,7 +189,6 @@ const RequestForm = () => {
                                     {errors.server && errors.server}
                                 </p>
 
-                                {/* Добавляем компонент капчи */}
                                 <div className={styles["form--captcha"]}>
                                     <ReCAPTCHA
                                         sitekey="6LeWXPYqAAAAAIN-pavipiqi3EeXmGf2mI5JZivH"
