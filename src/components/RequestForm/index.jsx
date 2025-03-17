@@ -191,7 +191,7 @@ const RequestForm = () => {
 
                                 <div className={styles["form--captcha"]}>
                                     <ReCAPTCHA
-                                        sitekey="6LeWXPYqAAAAAIN-pavipiqi3EeXmGf2mI5JZivH"
+                                        sitekey="6LemtvYqAAAAACucDXpry9_D42UfUKOZyULmffvP"
                                         onChange={handleCaptchaChange}
                                     />
                                     <p className={styles["form--error"]}>

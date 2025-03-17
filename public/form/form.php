@@ -6,7 +6,7 @@ if (isset($_POST['email'])) {
     $message = $_POST['message'];
     $captchaResponse = $_POST['captcha'];
 
-    $secretKey = '6LeWXPYqAAAAAIS-gh6oU2o9sOEENhKPCjgipiOJ';
+    $secretKey = '6LemtvYqAAAAAH2AoIcV-IcnC35DDN6kmHZXmcWN';
     $captchaUrl = "https://www.google.com/recaptcha/api/siteverify";
 
     $ch = curl_init();
