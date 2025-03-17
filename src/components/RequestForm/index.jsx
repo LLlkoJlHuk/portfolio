@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import dictionary from "@/constants/dictionary.jsx";
 import SettingsContext from "@/context/settings.js";
 import Human from "../../assets/images/human.svg";
@@ -17,7 +16,6 @@ const RequestForm = () => {
     const [step, setStep] = useState(1);
     const [loading, setLoading] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [captchaValue, setCaptchaValue] = useState(null);
 
     const validateStep = () => {
         let newErrors = {};
@@ -34,17 +32,8 @@ const RequestForm = () => {
             }
         }
 
-        // Добавляем проверку на капчу
-        if (step === 3 && !captchaValue) {
-            newErrors.captcha = dictionary.pageContactsFormCaptchaError[settings.lang];
-        }
-
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
-    };
-
-    const handleCaptchaChange = (value) => {
-        setCaptchaValue(value);
     };
 
     const handleNext = () => {
@@ -54,8 +43,7 @@ const RequestForm = () => {
     };
 
     const handleBack = () => {
-        let newErrors = {};
-        setErrors(newErrors);
+        setErrors({});
         setStep((prev) => prev - 1);
     };
 
@@ -69,7 +57,6 @@ const RequestForm = () => {
         formDataToSend.append('name', formData.name);
         formDataToSend.append('email', formData.email);
         formDataToSend.append('message', formData.message);
-        formDataToSend.append('captcha', captchaValue);
 
         try {
             const response = await fetch("/form/form.php", {
@@ -117,9 +104,7 @@ const RequestForm = () => {
                                     }}
                                 />
                             </div>
-                            <p className={styles["form--error"]}>
-                                {errors.name && errors.name}
-                            </p>
+                            <p className={styles["form--error"]}>{errors.name}</p>
                             <div className={styles["form--buttons"]}>
                                 <div className={`${styles["btn--back"]} ${styles["disabled"]}`}>
                                     <img src={Arrow} alt="arrow" />
@@ -148,9 +133,7 @@ const RequestForm = () => {
                                     }}
                                 />
                             </div>
-                            <p className={styles["form--error"]}>
-                                {errors.email && errors.email}
-                            </p>
+                            <p className={styles["form--error"]}>{errors.email}</p>
                             <div className={styles["form--buttons"]}>
                                 <div className={styles["btn--back"]} onClick={handleBack}>
                                     <img src={Arrow} alt="arrow" />
@@ -163,52 +146,26 @@ const RequestForm = () => {
                     )}
 
                     {step === 3 && (
-                        loading ? (
-                            <div className={styles["form--loading"]}>
-                                <img src={Loader} alt="loading" />
-                                <p>{dictionary.pageContactsFormLoading[settings.lang]}</p>
+                        <div className={styles["form--block"]}>
+                            <div className={styles["form--input-block"]}>
+                                <img src={Message} alt="message" />
+                                <input
+                                    type="text"
+                                    value={formData.message}
+                                    placeholder={dictionary.pageContactsFormInputMessage[settings.lang]}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                />
                             </div>
-                        ) : (
-                            <div className={styles["form--block"]}>
-                                <div className={styles["form--input-block"]}>
-                                    <img src={Message} alt="message" />
-                                    <input
-                                        type="text"
-                                        value={formData.message}
-                                        placeholder={dictionary.pageContactsFormInputMessage[settings.lang]}
-                                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                        onKeyDown={(e) => {
-                                            if (e.key === "Enter") {
-                                                e.preventDefault();
-                                            }
-                                        }}
-                                    />
+                            <p className={styles["form--error"]}>{errors.server}</p>
+                            <div className={styles["form--buttons"]}>
+                                <div className={styles["btn--back"]} onClick={handleBack}>
+                                    <img src={Arrow} alt="arrow" />
                                 </div>
-
-                                <p className={styles["form--error"]}>
-                                    {errors.server && errors.server}
-                                </p>
-
-                                <div className={styles["form--captcha"]}>
-                                    <ReCAPTCHA
-                                        sitekey="6LemtvYqAAAAACucDXpry9_D42UfUKOZyULmffvP"
-                                        onChange={handleCaptchaChange}
-                                    />
-                                    <p className={styles["form--error"]}>
-                                        {errors.captcha && errors.captcha}
-                                    </p>
-                                </div>
-
-                                <div className={styles["form--buttons"]}>
-                                    <div className={styles["btn--back"]} onClick={handleBack}>
-                                        <img src={Arrow} alt="arrow" />
-                                    </div>
-                                    <button type="submit" className={styles["btn--next"]} disabled={loading}>
-                                        {loading ? <img src={Loader} alt="loading" /> : dictionary.pageContactsFormBtnSend[settings.lang]}
-                                    </button>
-                                </div>
+                                <button type="submit" className={styles["btn--next"]} disabled={loading}>
+                                    {loading ? <img src={Loader} alt="loading" /> : dictionary.pageContactsFormBtnSend[settings.lang]}
+                                </button>
                             </div>
-                        )
+                        </div>
                     )}
                 </>
             )}

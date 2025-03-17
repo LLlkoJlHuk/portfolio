@@ -4,29 +4,6 @@ if (isset($_POST['email'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-    $captchaResponse = $_POST['captcha'];
-
-    $secretKey = '6LemtvYqAAAAAH2AoIcV-IcnC35DDN6kmHZXmcWN';
-    $captchaUrl = "https://www.google.com/recaptcha/api/siteverify";
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $captchaUrl);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
-        'secret' => $secretKey,
-        'response' => $captchaResponse
-    ]));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    $captchaVerify = curl_exec($ch);
-    curl_close($ch);
-
-    $captchaResult = json_decode($captchaVerify, true);
-
-    if (!$captchaResult['success']) {
-        echo 'CAPTCHA verification failed. Please try again.';
-        exit;
-    }
 
     // Настройки письма
     $to = "overkot12@gmail.com";
