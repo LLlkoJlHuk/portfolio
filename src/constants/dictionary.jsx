@@ -65,8 +65,8 @@ export default {
     },
 
     pageSkillsTxtInfo: {
-        ru: ['Меня зовут Константин, я фронтенд-разработчик с более чем 4-летним опытом в разработке. ', <br key="1" className="br--desktop" />, 'Я могу разработать полностью функциональный, адаптивный веб-сайт под ключ или переделать существующий сайт с использованием современных технологий или фреймворков ', <br key="2" className="br--desktop" />, 'на основе ваших требований.'],
-        en: ['I\'m Konstantin, a frontend developer with over 4 years of experience. I can develop a fully functional, ', <br key="1" className="br--desktop" />, 'responsive website from scratch or redesign an existing site using modern technology ', <br key="2" className="br--desktop" />, 'or frameworks based on your requirements.']
+        ru: ['Меня зовут Константин, я фронтенд-разработчик с более чем 4-летним опытом в разработке, ', <br key="1" className="br--desktop" />, 'которому нравится создавать чистые, эффективные и масштабируемые проекты. Я специализируюсь на использовании React, TypeScript и JavaScript для создания удобных интерфейсов и веб-приложений.'],
+        en: ['I\'m  Konstantin, a front-end developer with 4+ years of experience in development who enjoys building clean, efficient and scalable projects. I specialize in using React, TypeScript and JavaScript to build user-friendly interfaces and web applications.']
     },
 
     pageSkillsTxtInfoAboutMe: {

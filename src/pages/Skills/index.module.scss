@@ -45,12 +45,12 @@ body .page--skills {
     }
 
     .photo {
-      width: 250px;
-      height: 250px;
+      width: 350px;
+      height: auto;
 
       @include bigPhone {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: auto;
       }
     }
 

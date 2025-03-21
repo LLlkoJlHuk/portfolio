@@ -2,6 +2,7 @@ import VivantiRU from "../../assets/images/project-vivantiRU.jpg"
 import VivantiEU from "../../assets/images/project-vivantiEU.jpg"
 import Esculap from "../../assets/images/project-esculap.jpg"
 import Docsfera from "../../assets/images/project-docsfera.jpg"
+import SushiKub from "../../assets/images/project-sushikub.jpg"
 import MailsHelper from "../../assets/images/project-mailsHelper.jpg"
 
 const ProjectsList = [
@@ -29,6 +30,17 @@ const ProjectsList = [
 
     {
         id: 2,
+        name: 'Sushi Kub',
+        link: 'https://sushikub.ru/',
+        preview: SushiKub,
+        description: {
+            ru: 'Онлайн-сервис, предоставляющий возможность выбрать, оплатить и оформить доставку на дом суши и роллы',
+            en: 'An online service that allows you to choose, pay for and arrange home delivery of sushi and rolls'
+        }
+    },
+
+    {
+        id: 3,
         name: 'Esculap',
         link: 'https://antacidynapervom.esculap-med.ru/post/module1',
         preview: Esculap,
@@ -39,7 +51,7 @@ const ProjectsList = [
     },
 
     {
-        id: 3,
+        id: 4,
         name: 'Docsfera',
         link: 'https://docsfera.ru/',
         preview: Docsfera,
@@ -50,7 +62,7 @@ const ProjectsList = [
     },
 
     {
-        id: 4,
+        id: 5,
         name: 'Mails Helper',
         link: 'https://mail.apps.vivanti.ru',
         preview: MailsHelper,
@@ -59,6 +71,10 @@ const ProjectsList = [
             en: 'An information resource that helps developers speed up the process of developing and editing Email letters'
         }
     },
+
+
+
+
 ]
 
 export default ProjectsList;

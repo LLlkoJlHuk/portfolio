@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRoutes, useLocation  } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import routes from "./routes/index.jsx";
 import SettingsContext from "./context/settings.js";
+import dictionary from "@/constants/dictionary.jsx";
 import Menu from "@/components/Menu/index.jsx";
 
 function AnimatedRoutes() {
@@ -21,6 +22,10 @@ function AnimatedRoutes() {
             return newSettings;
         });
     }
+
+    useEffect(() => {
+        document.title = dictionary.pageMainBtnTxt[settings.lang] + ' − LLlkoJlHuk';
+    }, [settings.lang]);
 
     return (
         <SettingsContext.Provider value={{settings, changeLanguage}}>
