@@ -19,6 +19,10 @@ const routes = [
     {
         path: "/contacts",
         element: <Contacts />,
+    },
+    {
+        path: "*",
+        element: <Main />,
     }
 ];
 

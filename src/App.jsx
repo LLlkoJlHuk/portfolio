@@ -27,6 +27,12 @@ function AnimatedRoutes() {
         document.title = dictionary.pageMainBtnTxt[settings.lang] + ' − LLlkoJlHuk';
     }, [settings.lang]);
 
+    useEffect(() => {
+        if (location.pathname.startsWith("/ru") && settings.lang !== "ru") {
+            changeLanguage("ru");
+        }
+    }, [location.pathname]);
+
     return (
         <SettingsContext.Provider value={{settings, changeLanguage}}>
             <AnimatePresence mode="wait">
