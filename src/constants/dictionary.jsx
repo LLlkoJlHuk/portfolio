@@ -66,7 +66,7 @@ export default {
 
     pageSkillsTxtInfo: {
         ru: ['Меня зовут Константин, я фронтенд-разработчик с более чем 4-летним опытом в разработке, ', <br key="1" className="br--desktop" />, 'которому нравится создавать чистые, эффективные и масштабируемые проекты. Я специализируюсь на использовании React, TypeScript и JavaScript для создания удобных интерфейсов и веб-приложений.'],
-        en: ['I\'m  Konstantin, a front-end developer with 4+ years of experience in development who enjoys building clean, efficient and scalable projects. I specialize in using React, TypeScript and JavaScript to build user-friendly interfaces and web applications.']
+        en: ['I\'m a front-end developer with 4+ years of experience who enjoys building clean, efficient, and scalable projects. I specialize in React, TypeScript, and JavaScript to build user-friendly interfaces and web applications. I dedicate time to learning new technologies, expanding my stack, and improving my skills.']
     },
 
     pageSkillsTxtInfoAboutMe: {
@@ -158,13 +158,13 @@ export default {
 
 
         en: ['Website development and support.', <br key={1} />, <br key={2} />,
-            '• More than 24 web projects have been developed on a turnkey basis (the vast majority are landing pages)', <br key={3} />,
-            '• More than 60 small and medium-sized tasks have been completed to edit the content and functionality of client projects', <br key={4} />, <br key={5} />,
+            '• Delivered more than 24 web projects end-to-end, primarily landing pages.', <br key={3} />,
+            '• Handled over 60 tasks focused on content updates and functionality improvements for client projects.', <br key={4} />, <br key={5} />,
             'Responsibilities included:', <br key={6} />,
-            '• Design creation', <br key={7} />,
+            '• Creating designs', <br key={7} />,
             '• Creation of landing pages/online stores/corporate websites', <br key={8} />,
-            '• Linking and setting up with CMS', <br key={9} />,
-            '• Connecting and basic setting up of Google Analytics', <br key={10} />,
+            '• Integrating and configuring CMS', <br key={9} />,
+            '• Setting up and configuring Google Analytic', <br key={10} />,
             '• Connecting and setting up hosting', <br key={11} />,
             '• Writing scripts for ready-made solutions']
     },
@@ -196,12 +196,12 @@ export default {
             '• Коммуникация с техническими специалистами заказчика', <br key={12} />,
             '• Работа в команде с дизайнерами, QA и менеджерами с возможностью влиять на формат взаимодействия и процессы'],
         en: ['Development and support of web applications.', <br key={1} />, <br key={2} />,
-            '• Developed 7 large-scale web projects on a turnkey basis',  <br key={3} />,
-            '• Implemented more than 140 small and medium-sized tasks',  <br key={4} className="br--desktop"  />, '(including creating separate pages for existing projects, small web applications,',  <br key={5} className="br--desktop" />, ' editing and supporting third-party projects)',  <br key={6} />,  <br key={7} />,
+            '• Built 7 large-scale web projects from scratch.',  <br key={3} />,
+            '• Executed over 140 small and medium-sized tasks, including developing standalone pages for existing', <br key={5} /> ,'projects, creating lightweight web applications, and maintaining third-party solutions.',  <br key={6} />,  <br key={7} />,
             'Responsibilities included:', <br key={8} />,
             '• Development of new and development of existing services and projects', <br key={9} />,
             '• Implementation of new technologies and development methods', <br key={10} />,
-            '• Maintaining the relevance of project stacks', <br key={11} />,
+            '• Keeping project stacks up to date', <br key={11} />,
             '• Conducting code reviews', <br key={12} />,
             '• Communication with the customer\'s technical specialists', <br key={13} />,
             '• Teamwork with designers, QA and managers with the ability to influence the format of interaction and processes']
